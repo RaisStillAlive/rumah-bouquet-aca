@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Etalase | Rumah Bouquet ACA</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ICON -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">RUMAH BOUQUET ACA</div>
+
+      <ul>
+        <li>
+          <a href="etalase.html">
+            <i class="fa-solid fa-gift"></i>
+            Etalase
+          </a>
+        </li>
+
+        <li>
+          <a href="kontak.html">
+            <i class="fa-solid fa-heart"></i>
+            Kontak
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Kembali
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+      <!-- TITLE -->
+      <section class="etalase-title">
+        <h1>Etalase</h1>
+      </section>
+
+      <!-- PRODUK -->
+      <section class="produk-container">
+        <!-- CARD 1 -->
+        <div
+          class="card"
+          data-img="img/bouquet1.jpg"
+          data-title="Money Bouquet"
+          data-price="Rp 85.000"
+          data-desc="Bouquet uang custom aesthetic"
+          data-wa="https://wa.me/628123456789"
+        >
+          <img src="img/bouquet1.jpg" alt="Money Bouquet" />
+
+          <h2>Money Bouquet</h2>
+
+          <p>Klik untuk lihat detail</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="card"
+          data-img="img/bouquet2.jpg"
+          data-title="Satin Bouquet"
+          data-price="Rp 70.000"
+          data-desc="Bouquet satin handmade dengan desain elegan"
+          data-wa="https://wa.me/628123456789"
+        >
+          <img src="img/bouquet2.jpg" alt="Satin Bouquet" />
+
+          <h2>Satin Bouquet</h2>
+
+          <p>Klik untuk lihat detail</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- POPUP -->
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close-btn" id="close-popup"> &times; </span>
+
+        <img id="popup-img" src="" alt="Bouquet" />
+
+        <h2 id="popup-title"></h2>
+
+        <h3 id="popup-price"></h3>
+
+        <p id="popup-desc"></p>
+
+        <a id="popup-wa" target="_blank" class="pesan-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          Pesan Sekarang
+        </a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <h3>RUMAH BOUQUET ACA</h3>
+
+      <p>Handmade bouquet with love ✨</p>
+
+      <span> Copyright © 2026 </span>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
