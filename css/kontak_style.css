@@ -1,0 +1,40 @@
+.kontak-title {
+  margin-top: 70px;
+  text-align: center;
+}
+.kontak-title h1 {
+  font-size: 80px;
+  color: #f45a9c;
+}
+.kontak-container {
+  width: 100%;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+.kontak-box {
+  width: 330px;
+  height: 100px;
+  background: #f45a9c;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 45px;
+  box-shadow: 0 5px 15px rgba(244, 90, 156, 0.2);
+}
+
+@media (max-width: 768px) {
+  .kontak-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .kontak-box {
+    width: 90%;
+  }
+}

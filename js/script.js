@@ -61,7 +61,7 @@ cards.forEach((card) => {
 
     // template pesan WA
     const message =
-      `Halo kak 👋\n` +
+      `Halo kak profesor aca cantik banget banget banget 👋\n` +
       `Saya tertarik dengan ${title}\n` +
       `Harga: ${price}\n\n` +
       `Apakah bouquet ini masih tersedia?`;

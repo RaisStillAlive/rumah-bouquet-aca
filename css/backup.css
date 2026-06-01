@@ -141,15 +141,38 @@ a:hover i {
    HERO
 ========================= */
 
+/* Update bagian .hero di css/style.css */
+/* Hapus background di .hero agar tidak bentrok */
 .hero {
-  height: 80vh;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
+  /* Hapus semua baris background di sini */
+}
+
+/* Gunakan ini sebagai pengendali utama background */
+.hero-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/foto_bunga.jpeg") no-repeat center center/cover;
+  opacity: 0.3;
+  pointer-events: none; /* Agar tidak mengganggu klik tombol */
+}
+
+/* Pastikan body tidak memiliki background solid yang menutupi gambar */
+body {
+  /* Ubah background-color menjadi transparent agar gambar di bawahnya muncul */
+  background-color: transparent;
+  font-family: "Patrick Hand", cursive;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero h1 {
@@ -272,11 +295,12 @@ a:hover i {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* Ganti bagian ini di css/style.css */
 .card img {
   width: 100%;
-  height: 380px;
-
-  object-fit: cover;
+  height: 300px; /* Diubah jadi 300px agar lebih proporsional */
+  object-fit: cover; /* Ini kunci agar gambar tidak gepeng */
+  display: block;
 }
 
 .card:hover img {

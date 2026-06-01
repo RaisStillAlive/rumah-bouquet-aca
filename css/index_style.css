@@ -1,0 +1,52 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/foto_bunga.jpeg") no-repeat center center/cover;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+.hero h1 {
+  font-size: 90px;
+  color: #f45a9c;
+  font-family: "Cormorant Garamond", serif;
+}
+.hero p {
+  margin-top: 20px;
+  color: #f45a9c;
+  font-size: 25px;
+}
+.btn {
+  margin-top: 50px;
+  padding: 20px 80px;
+  background: #f45a9c;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 25px;
+  box-shadow: 0 5px 15px rgba(244, 90, 156, 0.25);
+}
+.btn:hover {
+  background: #e0488a;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 55px;
+  }
+  .hero p {
+    font-size: 22px;
+  }
+}
