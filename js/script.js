@@ -88,3 +88,41 @@ window.addEventListener("click", (e) => {
     popup.style.display = "none";
   }
 });
+
+// untuk toggle button
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navUl = document.querySelector("nav ul");
+
+  // FUNGSI TOGGLE NAVBAR
+  if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+      navUl.classList.toggle("active");
+    });
+  }
+
+  // FUNGSI POPUP (Sudah ada di kodinganmu)
+  const cards = document.querySelectorAll(".card");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("close-popup");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      document.getElementById("popup-img").src = card.getAttribute("data-img");
+      document.getElementById("popup-title").innerText =
+        card.getAttribute("data-title");
+      document.getElementById("popup-price").innerText =
+        card.getAttribute("data-price");
+      document.getElementById("popup-desc").innerText =
+        card.getAttribute("data-desc");
+      document.getElementById("popup-wa").href = card.getAttribute("data-wa");
+      popup.style.display = "flex";
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  }
+});
