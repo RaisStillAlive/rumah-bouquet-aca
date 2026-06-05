@@ -91,31 +91,60 @@ window.addEventListener("click", (e) => {
 
 // untuk toggle button
 document.addEventListener("DOMContentLoaded", function () {
+  // 1. TRANSISI HALAMAN
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (
+        href &&
+        !href.startsWith("#") &&
+        !href.includes("wa.me") &&
+        !this.classList.contains("close-btn")
+      ) {
+        e.preventDefault();
+        document.querySelector("main").classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 250);
+      }
+    });
+  });
+
+  // 2. TOGGLE NAVBAR
   const menuToggle = document.querySelector(".menu-toggle");
   const navUl = document.querySelector("nav ul");
 
-  // FUNGSI TOGGLE NAVBAR
   if (menuToggle) {
     menuToggle.addEventListener("click", function () {
       navUl.classList.toggle("active");
     });
   }
 
-  // FUNGSI POPUP (Sudah ada di kodinganmu)
+  // 3. POPUP PRODUK
   const cards = document.querySelectorAll(".card");
   const popup = document.getElementById("popup");
   const closeBtn = document.getElementById("close-popup");
+  const popupImg = document.getElementById("popup-img");
+  const popupTitle = document.getElementById("popup-title");
+  const popupPrice = document.getElementById("popup-price");
+  const popupDesc = document.getElementById("popup-desc");
+  const popupWa = document.getElementById("popup-wa");
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      document.getElementById("popup-img").src = card.getAttribute("data-img");
-      document.getElementById("popup-title").innerText =
-        card.getAttribute("data-title");
-      document.getElementById("popup-price").innerText =
-        card.getAttribute("data-price");
-      document.getElementById("popup-desc").innerText =
-        card.getAttribute("data-desc");
-      document.getElementById("popup-wa").href = card.getAttribute("data-wa");
+      popupImg.src = card.dataset.img;
+      popupTitle.textContent = card.dataset.title;
+      popupPrice.textContent = card.dataset.price;
+      popupDesc.textContent = card.dataset.desc;
+
+      const message =
+        `Halo kak profesor aca cantik banget banget banget 👋\n` +
+        `Saya tertarik dengan ${card.dataset.title}\n` +
+        `Harga: ${card.dataset.price}\n\n` +
+        `Apakah bouquet ini masih tersedia?`;
+
+      popupWa.href =
+        `https://wa.me/62895323049469?text=` + encodeURIComponent(message);
       popup.style.display = "flex";
     });
   });
@@ -125,4 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
       popup.style.display = "none";
     });
   }
+
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
 });
